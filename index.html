@@ -17,7 +17,7 @@
         <script>
 
           function onSubmit(value) {  
-            let result =  idx.search(value)
+            let result =  idx.search("vietnam" && "Vietnam")
             
             
             let length = result.length
@@ -27,7 +27,7 @@
             console.log('this is the result to the search', length)
 
             let skus = []
-            
+
              result.map(function (res) {
                skus.push(res.ref)
             })
@@ -37,7 +37,7 @@
          
         </script>
 
-        <button onclick="return onSubmit('cajun')"> Click Me </button>
+        <button onclick="return onSubmit()"> Click Me </button>
         <p id='results'></p>
       </div>
 
