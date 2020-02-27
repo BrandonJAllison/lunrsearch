@@ -15,28 +15,29 @@
       <div>
 
         <script>
+
           function onSubmit(value) {  
             let result =  idx.search(value)
-
+            
+            
             let length = result.length
 
             let name = result.score
 
             console.log('this is the result to the search', length)
 
-           
-            var app = document.querySelector('#app');
-
+            let skus = []
             
-            app.innerHTML = '<ul>' + result.map(function (res) {
-                return '<li>' + res.ref + '</li>';
-            }).join('') + '</ul>';
+             result.map(function (res) {
+               skus.push(res.ref)
+            })
+            console.log('SKUS', skus)
 
           }
-  
+         
         </script>
 
-        <button onclick="return onSubmit('apple')"> Click Me </button>
+        <button onclick="return onSubmit('cajun')"> Click Me </button>
         <p id='results'></p>
       </div>
 
