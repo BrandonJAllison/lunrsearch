@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+  <script src='./js/scripts.js'></script>
+  <title>Search Test</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+      <div>
+
+        <script>
+          function onSubmit(value) {  
+            let result =  idx.search(value)
+
+            let length = result.length
+
+            let name = result.score
+
+            console.log('this is the result to the search', length)
+
+           
+            var app = document.querySelector('#app');
+
+            
+            app.innerHTML = '<ul>' + result.map(function (res) {
+                return '<li>' + res.ref + '</li>';
+            }).join('') + '</ul>';
+
+          }
+  
+        </script>
+
+        <button onclick="return onSubmit('apple')"> Click Me </button>
+        <p id='results'></p>
+      </div>
+
+      <div id='app'></div>
+
+     
+    </body>
+    </html>
