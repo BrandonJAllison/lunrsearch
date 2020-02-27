@@ -16,9 +16,16 @@
 
         <script>
 
-          function onSubmit(value) {  
-            let result =  idx.search("vietnam" && "Vietnam")
-            
+          function onSubmit() {  
+
+            //running the search
+            //need to look into normalize all words in the indexing stage to alieviate 
+            //need to look into predicitive text 
+            //need to look into testing 
+            //need to look into comparing the skus to the backend 
+            //work on getting results out the dom in card form
+
+            let result =  idx.search("spicy" && "Spicy")
             
             let length = result.length
 
@@ -31,6 +38,7 @@
              result.map(function (res) {
                skus.push(res.ref)
             })
+
             console.log('SKUS', skus)
 
           }
